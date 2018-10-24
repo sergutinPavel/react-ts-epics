@@ -1,4 +1,4 @@
-import {Action} from "redux";
+import {action} from 'typesafe-actions'
 
 export enum ActionTypes {
   TOGGLE_SIDEBAR = '[general] TOGGLE_SIDEBAR',
@@ -7,25 +7,15 @@ export enum ActionTypes {
   EXAMPLE_ACTION_ERROR = '[general] EXAMPLE_ACTION_ERROR'
 }
 
-export class ToggleSidebarAction implements Action {
-  public readonly type = ActionTypes.TOGGLE_SIDEBAR;
-  constructor(public payload?: boolean) {}
-}
-export class ExampleAction implements Action {
-  public type = ActionTypes.EXAMPLE_ACTION;
-  constructor(public payload?: any) {}
-}
-export class ToggleSidebarSuccessAction implements Action {
-  public readonly type = ActionTypes.EXAMPLE_ACTION_SUCCESS;
-  constructor(public payload?: boolean) {}
-}
-export class ToggleSidebarFailAction implements Action {
-  public readonly type = ActionTypes.EXAMPLE_ACTION_ERROR;
-  constructor(public payload?: boolean) {}
-}
-
-export type Actions =
-  ToggleSidebarAction
-  | ToggleSidebarSuccessAction
-  | ToggleSidebarFailAction
-  | ExampleAction;
+export const ToggleSidebarAction = (payload?: boolean) => {
+  return action(ActionTypes.TOGGLE_SIDEBAR, payload);
+};
+export const ExampleAction = (payload?: any) => {
+  return action(ActionTypes.EXAMPLE_ACTION, payload);
+};
+export const ExampleActionSuccess = (payload?: any) => {
+  return action(ActionTypes.EXAMPLE_ACTION_SUCCESS, payload);
+};
+export const ExampleActionFail = (payload?: any) => {
+  return action(ActionTypes.EXAMPLE_ACTION_ERROR, payload);
+};
