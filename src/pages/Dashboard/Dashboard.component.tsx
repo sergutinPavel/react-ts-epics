@@ -54,7 +54,8 @@ class DashboardComponent extends React.Component<IOwnProps, any> {
   public render() {
     console.log('this', this);
     return (
-      <div onClick={this.navigateTo}>
+      <div className={"app-layout__page"}
+           onClick={this.navigateTo}>
         DashboardComponent
       </div>
     )

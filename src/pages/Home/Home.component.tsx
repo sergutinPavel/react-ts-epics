@@ -4,7 +4,7 @@ class HomeComponent extends React.Component<any, any> {
 
   public render() {
     return (
-      <div>
+      <div className={"app-layout__page"}>
         Home
       </div>
     )

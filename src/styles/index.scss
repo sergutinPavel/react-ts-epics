@@ -1,1 +1,9 @@
-@import 'layout';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/bootstrap-grid.css";
+@import "~bootstrap/dist/css/bootstrap-reboot.css";
+@import "~@mdi/font/css/materialdesignicons.css";
+
+@import "./global-varibles";
+@import "./mixin/index";
+@import "./layout/index";
+@import "./elements/index";
