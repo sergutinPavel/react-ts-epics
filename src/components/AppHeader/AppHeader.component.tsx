@@ -8,8 +8,6 @@ class AppHeaderComponent extends React.Component<any, any> {
     return (
       <header className={"app-layout__header"}>
         {/*<span className="mdi mdi-airballoon" />*/}
-        {/*<a className={"btn btn-outline-primary"}>Home</a>*/}
-        {/*<a className={"btn btn-outline-primary"}>Dashboard</a>*/}
         <NavLink className={"btn btn-outline-primary"}
                  to="/home"
                  activeClassName={"active"}>Home</NavLink>

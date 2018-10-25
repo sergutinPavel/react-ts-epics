@@ -1,6 +1,16 @@
 @mixin primary-font() {
-  font-family: 'Segoe UI', 'Helvetica', sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-@mixin curve-font() {
-  font-family: "Roboto Slab", "Times New Roman", serif;
+@mixin thin-font() {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+@mixin serif-font() {
+  font-family: 'EB Garamond', serif;
+}
+@mixin cursive-font() {
+  font-family: 'Lobster', cursive;
 }
