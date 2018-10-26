@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Redirect, Route, Switch} from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 
 const SignInComponent: React.SFC<any> = () => <div>SignInComponent</div>;
 const SignUpComponent: React.SFC<any> = () => <div>SignUpComponent</div>;

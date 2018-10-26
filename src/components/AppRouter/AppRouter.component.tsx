@@ -1,7 +1,6 @@
 // libs
 import * as React from "react";
-// import {Redirect, Route, Switch} from "react-router";
-import {Redirect, Route, Switch} from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 // pages
 import AppHeaderComponent from "../AppHeader/AppHeader.component";
 import AppAuthComponent from "../AppAuth/AppAuth.component";
