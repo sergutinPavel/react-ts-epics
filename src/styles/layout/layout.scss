@@ -13,6 +13,12 @@ body {
   font-size: 1.8rem;
   @include thin-font();
 }
+h1, h2 {
+  @include cursive-font();
+}
+h3, h4, h5, h6, .serif-font {
+  @include serif-font();
+}
 
 .app-layout {
   position: relative;

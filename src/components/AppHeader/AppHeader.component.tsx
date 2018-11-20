@@ -1,23 +1,27 @@
-import * as React from "react";
+import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import { history } from '../../store';
 
 interface IOwnState {
   showHeader: boolean;
   scrollTop: number | undefined;
   [key: string]: any;
 }
-class AppHeaderComponent extends React.Component<any, IOwnState> {
-  constructor(props: any) {
+interface IOwnProps {
+  [key: string]: any;
+}
+class AppHeaderComponent extends React.Component<IOwnProps, IOwnState> {
+  constructor(props: IOwnProps) {
     super(props);
     this.state = {
       showHeader: true,
       scrollTop: undefined
     };
   }
-  componentDidMount () {
+  componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   };
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   };
 
@@ -27,17 +31,25 @@ class AppHeaderComponent extends React.Component<any, IOwnState> {
       this.setState({showHeader: true, scrollTop});
       return;
     }
-    if (this.state.scrollTop < scrollTop) {
+    if (this.state.scrollTop < scrollTop && scrollTop > 50) {
       this.setState({showHeader: false, scrollTop})
     } else {
       this.setState({showHeader: true, scrollTop})
     }
   };
 
+  goBack(): void {
+    console.warn('', history);
+    history.goBack();
+  }
+  goForward(): void { history.goForward(); }
+
   render() {
     return (
       <header className={"app-layout__header" + (this.state.showHeader ? "": " hide")}>
         {/*<span className="mdi mdi-airballoon" />*/}
+        <a className={"btn btn-warning"} onClick={this.goBack}>Back</a>
+        <a className={"btn btn-warning"} onClick={this.goForward}>Forward</a>
         <NavLink className={"btn btn-outline-primary"}
                  to="/home"
                  activeClassName={"active"}>Home</NavLink>
