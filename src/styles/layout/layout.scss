@@ -45,7 +45,7 @@ h3, h4, h5, h6, .serif-font {
     box-shadow: 0 -1rem 2rem 1rem rgba(0, 0, 0, .2);
     background-color: #fff;
     z-index: 50;
-    transition: all .5s ease-in-out;
+    transition: all .6s ease-in-out;
   }
   &__header.hide {
     top: -(map-get($app-sizes, header-height));

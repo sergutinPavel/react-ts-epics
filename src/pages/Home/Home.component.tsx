@@ -5,7 +5,7 @@ class HomeComponent extends React.Component<any, any> {
   public render() {
     return (
       <div className={"app-layout__page"}>
-        <h3>Home</h3>
+        <h2>Home</h2>
 
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet aperiam atque commodi dolorem inventore
           magnam minima nam nihil, nisi, provident repellat, similique voluptas. Ducimus eius exercitationem hic in

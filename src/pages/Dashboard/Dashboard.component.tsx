@@ -1,12 +1,15 @@
 import * as React from "react";
-import {Dispatch} from "redux";
-import {connect} from "react-redux";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
 import {
   IApplicationState,
   selectExpandSidebar
 } from "../../store/root.reducer";
-import {ExampleAction, ToggleSidebarAction} from "../../store/general/general.actions";
-import {history} from "../../store";
+import {
+  ExampleAction,
+  ToggleSidebarAction
+} from "../../store/general/general.actions";
+import { history } from "../../store";
 
 interface IConnectedState {
   expandSidebar: boolean;
@@ -30,9 +33,9 @@ const mapDispatchToProps = (dispatch: Dispatch): IConnectedDispatch => ({
 });
 
 class DashboardComponent extends React.Component<IOwnProps, any> {
-  // constructor(props: IOwnProps) {
-  //   super(props);
-  // }
+  constructor(props: IOwnProps) {
+    super(props);
+  }
 
   // componentWillMount () {
   //   // console.log('DashboardComponent componentWillMount', selectExpandSidebar);

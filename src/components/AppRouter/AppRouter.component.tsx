@@ -1,6 +1,9 @@
 // libs
 import * as React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+// routing protection
+import { PrivateRoute } from "./RoutingProtection/PrivateRoute";
+import { AuthRoute } from "./RoutingProtection/AuthRoute";
 // pages
 import AppHeaderComponent from "../AppHeader/AppHeader.component";
 import AppAuthComponent from "../AppAuth/AppAuth.component";
@@ -24,13 +27,17 @@ const RootRoutes: React.SFC<any> = () => {
 
 const AppRouterComponent: React.SFC<any> = (props?) => {
   console.warn('process.env', process.env, props);
+  // todo: 1. create auth store
+  // todo: 2. get auth status from the store
+  const isAuthorised = true;
   return (
     <div className={"app-layout"}>
       <Switch>
         <Redirect from="/" to="/dashboard" exact={true} />
-        <Route path="/auth" component={AppAuthComponent} />
-        <Route path="/" component={RootRoutes} />
-        {/*<PrivateRoute path="/" component={ProtectedContent} />*/}
+        {/*<Route path="/auth" component={AppAuthComponent} />*/}
+        {/*<Route path="/" component={RootRoutes} />*/}
+        <AuthRoute path="/auth" component={AppAuthComponent} is_not_authorized={!isAuthorised} />
+        <PrivateRoute path="/" component={RootRoutes} is_authorized={isAuthorised} />
       </Switch>
     </div>
   );
